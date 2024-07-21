@@ -78,6 +78,8 @@ export default [{
   },
   plugins: [
     nodeResolve(),
-    commonjs(),
+    esbuild({
+      minify: true
+    })
   ],
 }];
