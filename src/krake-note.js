@@ -5,7 +5,7 @@ import beer from "https://cdn.jsdelivr.net/npm/beercss@3.6.8/dist/cdn/beer.min.c
 
 class KrakeNote extends LitElement {
   static styles = [
-    beer, font
+    beer, font, 
   ]
   static properties = {
     _fileHandle: {
@@ -38,13 +38,24 @@ class KrakeNote extends LitElement {
     return arg ? unsafeHTML(arg) : html`<p>svg will be here</p>`
   }
 
+  openDialog = () => this.shadowRoot.getElementById("kraken-dialog-1").showModal(); 
+
   render() {
     return html`
-      <main class='max'>
-      <slot name='display-md'>${this.populateDiv(this._content)}</slot>
-      <button @click=${this._selectFile}>
-        <i>add</i>
-      </button>
+      <!-- <header>
+        <nav>
+          <button class="transparent circle" @click=${this.openDialog}>
+            <i>menu</i>
+          </button>
+        </nav>
+      </header> -->
+
+          <div  id='kraken-div-1' class='page bottom'>${this.populateDiv(this._content)}</div>
+          <div class='max'></div>
+          <button class="margin extend circle medium-elevate primary bottom right" @click=${this._selectFile}>
+            <i>folder_open</i>
+            <span>Open File</span>
+          </button>
       </main>
     `;
   }

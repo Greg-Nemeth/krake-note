@@ -13,8 +13,29 @@
 </head>
 
 <body>
-  <krake-note></krake-note>
-  <div slot='display-md' id='kraken-div1' class='card'></div>
+  <dialog id='kraken-dialog-1' class="left no-padding">
+  <nav class="left drawer primary">
+    <header>
+      <i class="extra padding">edit_square</i>
+      <h6>Krake-Note</h6>
+    </header>
+    <a>
+      <i class="extra">install_desktop</i>
+      <span>Install WebApp</span>
+    </a>
+  </nav>
+  </dialog>
+   <header class="primary">
+    <button  class="left absolute">
+       <!-- make it showmodal -->
+      <i>menu</i>
+      <span>Menu</span>
+    </button>
+   </header>
+  <main class='responsive round surface-container'>
+    <krake-note></krake-note>
+  </main>
+  <footer class="primary">Footer</footer>
 </body>
 
 </html>
